@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="devtime" version="0.0.1">
+    <name>devtime</name>
+    <description>
+        Time tracking for the developer.
+    </description>
+    <author email="christian.albrecht@mayflower.de" href="http://github.com/calbrecht">
+        Christian Albrecht
+    </author>
+</widget>

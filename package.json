@@ -1,0 +1,13 @@
+{
+  "name": "devtime",
+  "description": "Time tracking for the developer.",
+  "main": "./src/main.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/calbrecht/devtime.git"
+  },
+  "license": "GNU GPL v3.0",
+  "dependencies": {
+    "tabris": "^1.2.0"
+  }
+}

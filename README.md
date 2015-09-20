@@ -1,2 +1,2 @@
 # devtime
-Lazy developers time tracker
+Time tracking for the developer.
