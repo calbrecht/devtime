@@ -106,9 +106,9 @@ tabFolder = tabris.create("TabFolder", {
     layoutData: {left: 0, top: 40, right: 0, bottom: -51}
 }).appendTo(page);
 
-tabFolder.addTab = function (title) {
+tabFolder.addTab = function (id, title) {
     var tab = tabris.create("Tab", {
-        id: "today-project-" + title,
+        id: "today-project-" + id,
         title: title
     }).appendTo(tabFolder);
 
@@ -119,7 +119,7 @@ tabFolder.addTab = function (title) {
     }).appendTo(tab);
 
     tabris.create("CollectionView", {
-        id: "today-tasks-" + title,
+        id: "today-tasks-" + id,
         layoutData: {left: 0, top: "prev()", right: 0, bottom: 0},
         itemHeight: 40,
         background: "rgba(0,0,0,0.02)",
