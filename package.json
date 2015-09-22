@@ -6,9 +6,16 @@
     "type": "git",
     "url": "https://github.com/calbrecht/devtime.git"
   },
-  "license": "GNU GPL v3.0",
+  "license": "GPL-3.0",
   "dependencies": {
     "lodash": "^3.10.1",
-    "tabris": "^1.2.0"
+    "tabris": "^1.2.0",
+    "timezonecomplete": "^1.22.1"
+  },
+  "devDependencies": {
+    "jasmine": "^2.3.2"
+  },
+  "scripts": {
+    "test": "jasmine"
   }
 }
