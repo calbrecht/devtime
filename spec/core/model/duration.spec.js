@@ -3,9 +3,7 @@ describe("duration", function () {
         tc       = require("timezonecomplete/dist/timezonecomplete");
 
     it ("should have an endless date", function () {
-        var d = new Duration();
-
-        expect(d.endless instanceof tc.DateTime).toBeTruthy();
+        expect(Duration.prototype.endless instanceof tc.DateTime).toBeTruthy();
     });
 
     it ("should throw when trying to set endless", function () {
@@ -63,6 +61,16 @@ describe("duration", function () {
                 two: {start: "2000-01-15", stop: "2000-01-20"},
                 intersects: true,
                 intersection: {start: "2000-01-15", stop: "2000-01-20"}
+            }, {
+                one: {start: "2000-01-10", stop: Duration.prototype.endless},
+                two: {start: "2000-01-15", stop: "2000-01-20"},
+                intersects: true,
+                intersection: {start: "2000-01-15", stop: "2000-01-20"}
+            }, {
+                one: {start: "2000-01-10", stop: Duration.prototype.endless},
+                two: {start: "2000-01-15", stop: Duration.prototype.endless},
+                intersects: true,
+                intersection: {start: "2000-01-15", stop: Duration.prototype.endless}
             }
         ];
 
