@@ -11,7 +11,7 @@ function Project (values) {
         this.id = _.kebabCase(title);
     });
 
-    _.assign(this, _.defaultsDeep(values, {
+    _.assign(this, _.defaults(values, {
         title: ""
     }));
 }

@@ -1,15 +1,13 @@
-var _ = require("lodash"),
-    c = require("lodash/collection"),
-    collection = [];
+var _    = require("lodash"),
+    Base = require("./base");
 
 function Projects (create, projects) {
-    _.forEach(projects, function (project) {
-        collection.push(create(project));
-    });
+    this.create = create;
+    Base.call(this, projects);
 }
 
-_.forIn(c, function(func, key) {
-    Projects.prototype[key] = _.bind(func, null, collection);
+Projects.prototype = _.create(Base.prototype, {
+    'constructor': Projects
 });
 
 module.exports = Projects;

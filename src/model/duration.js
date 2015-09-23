@@ -19,7 +19,7 @@ function Duration (values) {
         stop = value instanceof tc.DateTime ? value : new tc.DateTime(value);
     });
 
-    _.assign(this, _.defaultsDeep(values || {}, {
+    _.assign(this, _.defaults(values || {}, {
         start: tc.now(),
         stop: this.endless
     }));
@@ -48,6 +48,15 @@ Duration.prototype.intersection = function (duration) {
     }
 
     return null;
+};
+
+Duration.prototype.time = function () {
+    return this.stop.diff(this.start);
+};
+
+
+Duration.prototype.toHm = function () {
+    return this.time().toHmsString(true).replace(/:\d+\.\d+/, "");
 };
 
 module.exports = Duration;
