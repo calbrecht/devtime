@@ -5,7 +5,7 @@ function Base (values) {
     var collection = [];
 
     _.forIn(c, function(func, key) {
-        this[key] = _.bind(this[key], this, collection);
+        this[key] = _.bind(func, this, collection);
     }, this);
 
     this.__defineGetter__("collection", function () {
@@ -19,22 +19,18 @@ function Base (values) {
         return item;
     };
 
-    this.add = function (value) {
-        var item = this.findWhere(value);
-        if (!item) {
-            item = this.push(value);
-        }
-
-        return item;
-    };
-
     _.forEach(values, function (value) {
         this.push(value);
     }, this);
 }
 
-_.forIn(c, function(func, key) {
-    Base.prototype[key] = _.bind(func, Base.prototype);
-});
+Base.prototype.add = function (value) {
+    var item = this.findWhere(value);
+    if (!item) {
+        item = this.push(value);
+    }
+
+    return item;
+};
 
 module.exports = Base;
